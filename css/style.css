@@ -1,0 +1,747 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    transition: all 0.3s ease; /* Smooth transition globally */
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e8f0ff, #f4f7fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bgFade 1.5s ease-in-out;
+}
+
+/* ===== Animation ===== */
+@keyframes bgFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== Center Layout ===== */
+body > h2,
+form,
+p,
+.error {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== Title ===== */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f3c88;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: 600; /* Slightly bolder for better visibility */
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ===== Form Card ===== */
+form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 32px; /* Slightly more padding for spacious feel */
+    border-radius: 16px; /* Smoother corners */
+    box-shadow: 0 20px 45px rgba(31, 60, 136, 0.12); /* Softer shadow */
+    backdrop-filter: blur(12px); /* Slightly stronger blur */
+    animation: zoomIn 0.9s ease;
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== Inputs ===== */
+form input {
+    width: 100%;
+    padding: 14px 16px; /* Horizontal padding added */
+    margin-bottom: 18px;
+    border-radius: 10px; /* Slightly more rounded */
+    border: 1px solid #d0d8e8;
+    font-size: 15px;
+    background: #f9fbff;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+form input:focus {
+    outline: none;
+    border-color: #1f3c88;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(31, 60, 136, 0.15); /* Slightly larger halo */
+}
+
+/* ===== Floating Effect ===== */
+form input:hover {
+    transform: translateY(-2px) scale(1.02); /* Subtle scale effect added */
+    box-shadow: 0 4px 10px rgba(31, 60, 136, 0.08); /* Gentle hover shadow */
+}
+
+/* ===== Button ===== */
+form button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1f3c88, #3b6cff);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover */
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(31, 60, 136, 0.35);
+}
+
+/* Button Ripple Effect */
+form button::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+form button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== Error Message ===== */
+.error {
+    background: linear-gradient(135deg, #ffe5e5, #ffd6d6);
+    color: #c0392b;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* ===== Link ===== */
+p {
+    text-align: center;
+    margin-top: 18px;
+    animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+p a {
+    color: #1f3c88;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #3b6cff;
+    text-decoration: underline;
+}
+
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e6edff, #f7f9ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.2s ease;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-25px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* ===== Title ===== */
+h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #1f3c88;
+    letter-spacing: 1px;
+    animation: slideDown 0.9s ease;
+}
+
+/* ===== Form Card ===== */
+form {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(31, 60, 136, 0.18);
+    backdrop-filter: blur(12px);
+    animation: zoomIn 0.9s ease;
+}
+
+/* ===== Inputs ===== */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="date"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border-radius: 9px;
+    border: 1px solid #d2d9ec;
+    background: #f9fbff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #1f3c88;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(31, 60, 136, 0.15);
+}
+
+/* Subtle float */
+form input:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== Checkbox ===== */
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    margin: 12px 0 20px;
+    cursor: pointer;
+}
+
+label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #1f3c88;
+    cursor: pointer;
+}
+
+/* ===== Button ===== */
+form button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #1f3c88, #4a73ff);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+/* Hover lift */
+form button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(31, 60, 136, 0.35);
+}
+
+/* Ripple Effect */
+form button::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+form button:active::after {
+    width: 350px;
+    height: 350px;
+}
+
+/* ===== Error Message ===== */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* PHP Error */
+p[style*="color:red"] {
+    background: linear-gradient(135deg, #ffe4e4, #ffd2d2);
+    color: #c0392b !important;
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 480px;
+    animation: shake 0.4s ease;
+}
+/* ===== Dashboard Layout ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef3ff, #f8faff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Dashboard Card ===== */
+.dashboard {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(31, 60, 136, 0.2);
+    animation: dashboardIn 0.9s ease;
+}
+
+/* Animation */
+@keyframes dashboardIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== Welcome ===== */
+.dashboard h2 {
+    text-align: center;
+    color: #1f3c88;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* ===== Account Card ===== */
+.account-box {
+    background: linear-gradient(135deg, #1f3c88, #4b6cff);
+    color: #fff;
+    padding: 22px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 12px 30px rgba(31, 60, 136, 0.35);
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.account-box p {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.account-box .balance {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* ===== Action Buttons ===== */
+.dashboard a {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f3c88;
+    background: #f1f4ff;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover animation */
+.dashboard a:hover {
+    background: linear-gradient(135deg, #1f3c88, #4b6cff);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(31, 60, 136, 0.35);
+}
+
+/* Ripple effect */
+.dashboard a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.dashboard a:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== Logout Button ===== */
+.dashboard a.logout {
+    background: #ffe6e6;
+    color: #c0392b;
+}
+
+.dashboard a.logout:hover {
+    background: linear-gradient(135deg, #c0392b, #ff6b6b);
+    color: #ffffff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .dashboard {
+        padding: 25px;
+    }
+
+    .account-box .balance {
+        font-size: 22px;
+    }
+}
+/* ===== Profile Page ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef3ff, #f8faff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Heading ===== */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f3c88;
+    font-size: 28px;
+    animation: slideDown 0.8s ease;
+}
+
+/* ===== Profile Card ===== */
+.profile-card {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(31, 60, 136, 0.2);
+    animation: fadeUp 0.9s ease;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from { transform: translateY(-25px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Profile Card ===== */
+.profile-card {
+    width: 100%;
+    max-width: 720px;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(31, 60, 136, 0.2);
+    margin: 20px auto;
+    animation: fadeUp 0.9s ease;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* ===== Profile Top: IMAGE + DETAILS ===== */
+.profile-top {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+/* LEFT SIDE: IMAGE + BUTTONS */
+.profile-left {
+    width: 200px;
+    text-align: center;
+}
+
+/* PROFILE IMAGE */
+.profile-left .profile-img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #1f3c88;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-left .profile-img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(31, 60, 136, 0.4);
+}
+
+/* UPLOAD FORM */
+.profile-left form {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-left input[type="file"] {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* BUTTONS */
+.profile-left button {
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #1f3c88, #4b6cff);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.profile-left button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(31, 60, 136, 0.35);
+}
+
+/* Delete Button */
+.profile-left button[name="delete"] {
+    background: linear-gradient(135deg, #c0392b, #ff6b6b);
+}
+
+/* RIGHT SIDE: USER DETAILS */
+.profile-right {
+    flex: 1;
+}
+
+.profile-right p {
+    font-size: 15px;
+    padding: 6px 0;
+    border-bottom: 1px solid #eef1fb;
+}
+
+.profile-right p b {
+    color: #1f3c88;
+}
+
+/* ===== Divider ===== */
+.profile-card hr {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d6ddf3, transparent);
+}
+
+/* ===== Transaction History ===== */
+.profile-card h3 {
+    margin-bottom: 15px;
+    color: #1f3c88;
+    font-size: 20px;
+}
+
+.profile-card table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.profile-card th {
+    background: linear-gradient(135deg, #1f3c88, #4b6cff);
+    color: #ffffff;
+    font-size: 14px;
+    padding: 12px;
+}
+
+.profile-card td {
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    background: #f9fbff;
+    border-bottom: 1px solid #e6ebff;
+}
+
+/* Table hover */
+.profile-card tr:hover td {
+    background: #eef3ff;
+}
+
+/* ===== Back Link ===== */
+.profile-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 18px;
+    background: #f1f4ff;
+    color: #1f3c88;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.35s ease;
+}
+
+.profile-card a:hover {
+    background: linear-gradient(135deg, #1f3c88, #4b6cff);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(31, 60, 136, 0.35);
+}
+
+/* ===== Error Message ===== */
+.profile-card p[style*="color:red"] {
+    background: #ffe6e6;
+    color: #c0392b !important;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+    animation: shake 0.4s ease;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .profile-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-left {
+        width: 100%;
+    }
+
+    .profile-left .profile-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .profile-right {
+        width: 100%;
+    }
+
+    .profile-card table {
+        font-size: 13px;
+    }
+}
